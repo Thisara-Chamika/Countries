@@ -21,6 +21,7 @@ fetch("https://restcountries.com/v3.1/all")
                         <b>Region</b>: ${element.region}<br>
                         <b>Continents</b>: ${element.continents}<br>
                         <b>Population</b>: ${element.population}<br>
+                         <a class="btn btn-primary" href="${element.maps.googleMaps}">View On Map</a>
                         <td><img src="${element.flags.png}" alt=""></td>
                     </tr>`
         console.log(element.name.common);
