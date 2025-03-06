@@ -3,12 +3,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-family: Arial,sans-serif;
+    background-color: whitesmoke;
 }
 
 
 h1 {
     font-size: 4rem;
+    background: linear-gradient(to right, rgb(82, 64, 222), rgb(30, 203, 42)); 
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -21,10 +26,11 @@ h1 {
 .search-section input {
     width: 400px;
     padding: 15px;
-    border: 3px solid rgb(235, 235, 235);
+    border: none;
+    box-shadow: 1px 1px 1px rgb(203, 203, 203);
     border-radius: 50px;
     font-size: 1rem;
-    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(235, 235, 235));
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(182, 182, 182));
 }
 .search-section button {
     width: 150px;
@@ -39,18 +45,45 @@ h1 {
     transition: background-color 0.5s ease;
    
 }
-button:hover {
-
-}
 button:active {
     color: white;
-    background: linear-gradient(90deg, rgb(102, 102, 255), rgb(66, 97, 255)) ;
+    background: linear-gradient(90deg,rgb(66, 97, 255), rgb(30, 203, 42));
+    transform: scale(0.8);
 }
 
 
 
+/* ------------------ serch bar section ------------------ */
 
 
+.card {
+    width: 50%;
+    height: 250px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, rgb(150, 150, 150),  rgb(215, 215, 215));
+    border: none;
+    border-radius: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card .description {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1%;
+}
+
+.card .description img {
+    max-width: 100px;
+    margin-bottom: 10px;
+} 
+
+.card .description p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: black;
+}
 
 
 
