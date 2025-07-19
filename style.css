@@ -1,104 +1,174 @@
+/* Reset and base styles */
 body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    font-family: Arial,sans-serif;
-    background-color: whitesmoke;
+    padding: 0;
+    min-height: 100vh;
 }
-
 
 h1 {
-    font-size: 4rem;
-    background: linear-gradient(to right, rgb(82, 64, 222), rgb(30, 203, 42)); 
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    margin-top: 40px;
+    color: #2d3a4b;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    animation: fadeInDown 1s;
 }
 
-/* ------------------ serch bar section ------------------ */
-
-.search-section {
-    animation: fadeIn 1s ease-in-out;
+/* Search Section */
+#search-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 40px 0;
+    gap: 10px;
+    animation: fadeIn 1.2s;
 }
 
-.search-section input {
-    width: 400px;
-    padding: 15px;
+#country-name {
+    padding: 12px 18px;
     border: none;
-    box-shadow: 1px 1px 1px rgb(203, 203, 203);
-    border-radius: 50px;
-    font-size: 1rem;
-    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(182, 182, 182));
+    border-radius: 25px;
+    font-size: 1.1rem;
+    width: 260px;
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    transition: box-shadow 0.3s;
+    outline: none;
 }
-.search-section button {
-    width: 150px;
-    margin-left: 20px;
-    padding: 15px;
-    font-size: 1.3rem;
-    border-radius: 50px;
+
+#country-name:focus {
+    box-shadow: 0 4px 16px rgba(44, 62, 80, 0.15);
+}
+
+#searchbtn {
+    padding: 12px 28px;
+    background: linear-gradient(90deg, #4e54c8 0%, #8f94fb 100%);
+    color: #fff;
     border: none;
-    background: linear-gradient(90deg, rgb(78, 78, 241), rgb(78, 168, 241)) ;
-    color: white;
+    border-radius: 25px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background-color 0.5s ease;
-   
-}
-button:active {
-    color: white;
-    background: linear-gradient(90deg,rgb(66, 97, 255), rgb(30, 203, 42));
-    transform: scale(0.8);
+    box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
+    transition: background 0.3s, transform 0.2s;
+    outline: none;
 }
 
-
-
-/* ------------------ serch bar section ------------------ */
-
-
-.card {
-    width: 50%;
-    height: 250px;
-    margin-top: 20px;
-    background: linear-gradient(90deg, rgb(150, 150, 150),  rgb(215, 215, 215));
-    border: none;
-    border-radius: 20px;
-    animation: fadeIn 1s ease-in-out;
+#searchbtn:hover {
+    background: linear-gradient(90deg, #8f94fb 0%, #4e54c8 100%);
+    transform: scale(1.05);
 }
 
-.card .description {
-    padding: 20px;
+/* Card Styles */
+#card-body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1%;
+    gap: 32px;
+    padding: 20px 10vw 40px 10vw;
+    min-height: 200px;
 }
 
-.card .description img {
-    max-width: 100px;
-    margin-bottom: 10px;
-} 
-
-.card .description p {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: black;
+#card-body > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(44, 62, 80, 0.10);
+    padding: 28px 32px 22px 32px;
+    min-width: 260px;
+    max-width: 320px;
+    text-align: center;
+    animation: fadeInUp 0.8s;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
 }
 
+#card-body > div > #flag-img {
+    margin-bottom: 18px;
+}
 
+#card-body > div > #name {
+    margin-top: 0;
+}
 
+#card-body > div:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+}
 
+#flag-img {
+    width: 400px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.13);
+    animation: flagPop 0.7s;
+}
 
-/* animations */
+#name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 6px 0 0px 0;
+    letter-spacing: 1px;
+}
 
+#officialName {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+#region, #population {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+    margin: 6px 0;
+}
+
+#region {
+    font-weight: 500;
+}
+
+#population {
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes flagPop {
+    0% { transform: scale(0.7) rotate(-8deg); opacity: 0;}
+    80% { transform: scale(1.1) rotate(2deg);}
+    100% { transform: scale(1) rotate(0); opacity: 1;}
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    #card-body {
+        padding: 10px 2vw 30px 2vw;
+        gap: 18px;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    #card-body > div {
+        min-width: 90vw;
+        max-width: 98vw;
+        padding: 18px 8vw 16px 8vw;
     }
 }
